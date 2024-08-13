@@ -1,0 +1,78 @@
+@use 'sass:map';
+@import './sizes.scss';
+@import './screens.scss';
+
+html {
+	overflow: hidden;
+	--blue: #2f80ed;
+
+	@each $size, $px in $screen_sizes {
+		$header_height: map-get($header_sizes, $size);
+		$px-size: map-get($px_sizes, $size);
+		$main_img_h: map-get($main_img_height, $size);
+		$logo_h: map-get($logo_sizes, $size);
+		$description_size: map-get($description_sizes, $size);
+		$preview_size: map-get($preview_sizes, $size);
+		$preview_description_fs: map-get($preview_description_fsizes, $size);
+		$preview_duration_fs: map-get($preview_duration_fsizes, $size);
+		$about_description_fs: map-get($about_description_fsizes, $size);
+		$about_header_fs: map-get($about_header_fsizes, $size);
+		$about_img_circle_size: map-get($about_img_circle_sizes, $size);
+		$input_fs: map-get($input_fsizes, $size);
+		$dialog_header_fs: map-get($dialog_header_fsizes, $size);
+
+		@media screen and (min-width: $px) {
+			--header_height: #{$header_height};
+			--px: #{$px-size};
+			--main_img_height: #{$main_img_h};
+			--logo_height: #{$logo_h};
+			--description_size: #{$description_size};
+			--preview_size: #{$preview_size};
+			--preview_description_fs: #{$preview_description_fs};
+			--preview_duration_fs: #{$preview_description_fs};
+			--about_description_fs: #{$about_description_fs};
+			--about_header_fs: #{$about_header_fs};
+			--about_img_circle_size: #{$about_img_circle_size};
+			--input_fs: #{$input_fs};
+			--dialog_header_fs: #{$dialog_header_fs};
+		}
+	}
+}
+
+button {
+	outline: none;
+	border: none;
+	cursor: pointer;
+	background: none;
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-size: 15px;
+	font-family: Proxima Nova, sans-serif;
+}
+
+#scrollbar {
+	position: relative;
+	z-index: 0;
+	padding: 0 var(--px);
+	height: calc(100dvh - var(--header_height));
+	margin-top: var(--header_height);
+	width: 100%;
+}
+
+main {
+	position: relative;
+	padding-bottom: var(--px);
+}
+
+.hidden {
+	display: none;
+}

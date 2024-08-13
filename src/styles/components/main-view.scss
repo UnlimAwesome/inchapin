@@ -1,0 +1,56 @@
+@use 'sass:map';
+@use 'sass:list';
+@import '../screens.scss';
+
+#main-section {
+	height: calc(100dvh - var(--header_height));
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+
+	@for $i from 1 through 5 {
+		@media screen and (min-width: map.get($screen_sizes, list.nth(map.keys($screen_sizes), $i))) {
+			gap: #{$i * 10}px;
+		}
+	}
+
+	#main-img {
+		width: 100%;
+		height: var(--main_img_height);
+		object-fit: cover;
+	}
+
+	#main-description {
+		margin-bottom: 10px;
+		width: 100%;
+		display: flex;
+		justify-content: space-between;
+
+		p {
+			font-size: var(--description_size);
+			font-weight: normal;
+			color: var(--blue);
+			text-transform: uppercase;
+			line-height: 1.4em;
+			align-self: flex-end;
+			@media screen and (max-width: map.get($screen_sizes, 'lg')) {
+				align-self: flex-start;
+			}
+		}
+		img {
+			object-fit: contain;
+			height: var(--logo_height);
+			flex-grow: 0;
+		}
+
+		@media screen and (max-width: map.get($screen_sizes, 'lg')) {
+			justify-content: space-evenly;
+			flex: 1;
+			flex-direction: column;
+
+			img {
+				align-self: flex-end;
+			}
+		}
+	}
+}

@@ -1,0 +1,31 @@
+.input {
+	position: relative;
+	border-bottom: 1px solid rgba(#000000, 0.2);
+	input {
+		width: 100%;
+		padding-bottom: 5px;
+		font-size: var(--input_fs);
+		border: none;
+		text-transform: uppercase;
+
+		&:focus {
+			outline: none;
+		}
+
+		&:focus + label,
+		&:valid + label {
+			font-size: calc(var(--input_fs) * 0.8);
+			transform: translateY(calc(var(--input_fs) * -1.6));
+		}
+	}
+
+	label {
+		pointer-events: none;
+		position: absolute;
+		left: 0;
+		bottom: 5px;
+		font-size: var(--input_fs);
+		transition: all 0.3s;
+		text-transform: uppercase;
+	}
+}

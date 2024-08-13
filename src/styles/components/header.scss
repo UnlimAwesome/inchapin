@@ -1,0 +1,276 @@
+@use 'sass:map';
+@import '../screens.scss';
+
+header {
+	height: var(--header_height);
+	padding: 0 var(--px);
+	display: flex;
+	align-items: center;
+	width: 100%;
+	background-color: white;
+	position: fixed;
+	top: 0;
+	z-index: 1000;
+
+	.wrapper {
+		width: 100%;
+		display: flex;
+		align-items: center;
+		height: 50px;
+
+		@media screen and (max-width: map.get($screen_sizes, 'md')) {
+			justify-content: space-between;
+		}
+
+		@media screen and (max-width: map.get($screen_sizes, 'lg')) {
+			& > *:first-child {
+				order: 1;
+			}
+
+			& > *:last-child {
+				margin-left: 5%;
+				order: 2;
+			}
+
+			& > *:nth-child(2) {
+				margin-left: auto;
+				order: 3;
+			}
+		}
+
+		@media screen and (min-width: map.get($screen_sizes, 'lg')) {
+			@for $i from 1 through 4 {
+				& > *:nth-child(#{$i}) {
+					order: #{$i};
+				}
+			}
+
+			& > *:nth-child(3) {
+				margin-left: auto;
+				margin-right: var(--spacing);
+			}
+
+			& > *:nth-child(2) {
+				margin-left: var(--spacing);
+			}
+		}
+
+		@media screen and (min-width: map.get($screen_sizes, 'lg')) {
+			--spacing: 35px;
+		}
+		@media screen and (min-width: map.get($screen_sizes, 'xl')) {
+			--spacing: 40px;
+		}
+		@media screen and (min-width: map.get($screen_sizes, 'xxl')) {
+			--spacing: 45px;
+		}
+
+		& > * {
+			height: 100%;
+			text-align: center;
+		}
+		p {
+			letter-spacing: 0.07em;
+			font-weight: 600;
+			text-transform: uppercase;
+		}
+
+		button,
+		a {
+			display: flex;
+			align-items: center;
+		}
+
+		#choose-aparts-btn {
+			width: 240px;
+			height: 100%;
+			background-color: var(--blue);
+			color: white;
+			border-radius: 118px;
+			display: flex;
+			justify-content: center;
+			gap: 10px;
+			@media screen and (max-width: map.get($screen_sizes, 'md')) {
+				display: none;
+			}
+		}
+
+		#call-btn {
+			span {
+				letter-spacing: 0;
+			}
+			@media screen and (max-width: map.get($screen_sizes, 'lg')) {
+				display: none;
+			}
+		}
+
+		#order-btn {
+			color: var(--blue);
+
+			@media screen and (max-width: map.get($screen_sizes, 'lg')) {
+				p {
+					display: none;
+				}
+			}
+
+			#call-icon {
+				height: 100%;
+				aspect-ratio: 1 / 1;
+				border-width: 1px;
+				border-style: solid;
+				border-color: var(--blue);
+				border-radius: 50%;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				transition: border-color 0.3s ease;
+
+				@keyframes ring {
+					0% {
+						transform: rotate(0);
+					}
+					5% {
+						transform: rotate(30deg);
+					}
+					10% {
+						transform: rotate(-28deg);
+					}
+					15% {
+						transform: rotate(34deg);
+					}
+					20% {
+						transform: rotate(-32deg);
+					}
+					25% {
+						transform: rotate(30deg);
+					}
+					30% {
+						transform: rotate(-28deg);
+					}
+					35% {
+						transform: rotate(26deg);
+					}
+					40% {
+						transform: rotate(-24deg);
+					}
+					45% {
+						transform: rotate(22deg);
+					}
+					50% {
+						transform: rotate(-20deg);
+					}
+					55% {
+						transform: rotate(18deg);
+					}
+					60% {
+						transform: rotate(-16deg);
+					}
+					65% {
+						transform: rotate(14deg);
+					}
+					70% {
+						transform: rotate(-12deg);
+					}
+					75% {
+						transform: rotate(10deg);
+					}
+					80% {
+						transform: rotate(-8deg);
+					}
+					85% {
+						transform: rotate(6deg);
+					}
+					90% {
+						transform: rotate(-4deg);
+					}
+					95% {
+						transform: rotate(2deg);
+					}
+					100% {
+						transform: rotate(-1deg);
+					}
+				}
+
+				#call-icon-img {
+					height: 40%;
+					width: 40%;
+				}
+				&:hover {
+					border-color: black;
+					#call-icon-img {
+						animation: ring 1.5s infinite;
+					}
+				}
+				@media screen and (max-width: map.get($screen_sizes, 'lg')) and (min-width: map.get($screen_sizes, 'md')) {
+					border-color: #d7d7d7;
+				}
+
+				@media screen and (min-width: map.get($screen_sizes, 'lg')) {
+					display: none;
+				}
+			}
+		}
+	}
+	#logo-wrapper {
+		position: absolute;
+		left: 0;
+		right: 0;
+		width: 100%;
+		display: flex;
+		justify-content: center;
+		pointer-events: none;
+		img {
+			height: 25px;
+			@media screen and (min-width: map.get($screen_sizes, 'xxl')) {
+				height: 30px;
+			}
+
+			@media screen and (max-width: map.get($screen_sizes, 'md')) {
+				height: 21px;
+			}
+		}
+	}
+}
+
+#burger {
+	width: 38px;
+	height: 28px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	.line {
+		background-color: var(--blue);
+		width: 38px;
+		height: 2px;
+		@media screen and (max-width: map.get($screen_sizes, 'md')) {
+			background-color: black;
+		}
+	}
+
+	.line_mid {
+		margin: 6px 0;
+		transition: margin 0.3s ease;
+	}
+}
+
+#menu-btn {
+	display: flex;
+
+	gap: 12px;
+
+	@media screen and (max-width: map.get($screen_sizes, 'md')) {
+		p {
+			display: none;
+		}
+	}
+	@media screen and (max-width: map.get($screen_sizes, 'lg')) {
+		gap: 10px;
+	}
+	@media screen and (min-width: map.get($screen_sizes, 'xxl')) {
+		gap: 15px;
+	}
+
+	&:hover .line_mid {
+		margin: 10px 0;
+	}
+}

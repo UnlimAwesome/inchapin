@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0"
+		/>
+		<title>INCHAPIN</title>
+		<link
+			href="styles/styles.min.css"
+			rel="stylesheet"
+		/>
+	</head>
+	<body>
+		<header>
+			<div class="wrapper">
+				<button id="menu-btn">
+					<div id="burger">
+						<div class="line line_top"></div>
+						<div class="line line_mid"></div>
+						<div class="line line_bot"></div>
+					</div>
+					<p>Меню</p>
+				</button>
+				<button id="choose-aparts-btn">
+					<p class="animated-p">Выбрать квартиру</p>
+					<svg
+						width="24"
+						height="24"
+						viewBox="0 0 24 24"
+						fill="none"
+						xmlns="http://www.w3.org/2000/svg"
+					>
+						<path
+							d="M6.34317 7.75732L4.92896 9.17154L12 16.2426L19.0711 9.17157L17.6569 7.75735L12 13.4142L6.34317 7.75732Z"
+							fill="currentColor"
+						/>
+					</svg>
+				</button>
+				<a
+					id="call-btn"
+					href="tel:+74955272121"
+					><p class="animated-p">+7 495 527 21 21</p></a
+				>
+				<button id="order-btn">
+					<p class="animated-p">Заказать звонок</p>
+					<div id="call-icon">
+						<img
+							id="call-icon-img"
+							src="images/phone.svg"
+							alt="call"
+						/>
+					</div>
+				</button>
+			</div>
+			<div id="logo-wrapper">
+				<img
+					id="logo"
+					src="images/logo.svg"
+					alt="logo"
+				/>
+			</div>
+		</header>
+		<div id="scrollbar">
+			<main>
+				<section id="main-section">
+					<img
+						id="main-img"
+						src="images/main.png"
+						alt="apart"
+					/>
+					<div id="main-description">
+						<p>
+							Дом бизнес-класса<br />
+							для ценителей роскоши
+						</p>
+						<img
+							id="logo-lg"
+							src="images/logo_lg.svg"
+							alt="logo"
+						/>
+					</div>
+				</section>
+				<section id="about">
+					<div id="about-img-wrapper">
+						<h4>О проекте</h4>
+						<img
+							id="about-img"
+							src="images/sub.png"
+							alt="house"
+						/>
+						<div id="about-img-circle">
+							<img
+								src="images/Vector.png"
+								alt="vector"
+							/>
+						</div>
+					</div>
+					<div id="about-description">
+						<div id="about-description-wrapper">
+							<div id="about-line"></div>
+							<h4>
+								уютное и безопасное пространство для счастливой,<br />
+								<span class="blue">спокойной и размеренной жизни</span>
+							</h4>
+							<p>
+								<span class="blue">Квартиры от 65 до 356 м<sup>2</sup> с чистовой отделкой,</span><br />
+								балконами, лоджиями и террасами В собственной ЗАКРЫТОЙ охраняемой территориИ.
+							</p>
+							<div id="preview-wrapper">
+								<p id="preview-description">видео о проекте<br /><span>1:25 минут</span></p>
+								<div id="preview-line"></div>
+								<div id="preview-img-wrapper">
+									<img
+										id="preview-img"
+										src="images/preview.png"
+										alt="preview"
+									/>
+									<div id="preview-mask"></div>
+									<div id="preview-circle"></div>
+									<button id="preview-play">
+										<svg
+											width="8"
+											height="8"
+											viewBox="0 0 8 8"
+											fill="none"
+											xmlns="http://www.w3.org/2000/svg"
+										>
+											<path
+												d="M6.63041 3.38032C7.10989 3.65431 7.10989 4.34569 6.63041 4.61968L1.78266 7.38982C1.30686 7.66171 0.714844 7.31815 0.714844 6.77014L0.714844 1.22986C0.714844 0.681851 1.30686 0.338293 1.78266 0.610179L6.63041 3.38032Z"
+												fill="white"
+											/>
+										</svg>
+										<p>PLAY</p>
+									</button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+			</main>
+		</div>
+		<dialog id="dialog">
+			<div id="dialog-content">
+				<h4>Заказать звонок</h4>
+				<form
+					id="form"
+					method="dialog"
+				>
+					<div class="input">
+						<input
+							required="required"
+							id="name-input"
+							name="name"
+						/>
+						<label for="name-input">Ваше имя</label>
+					</div>
+					<div class="input">
+						<input
+							required="required"
+							class="tel"
+							id="phone-input"
+							name="phone"
+						/>
+						<label for="phone-input">Номер телефона</label>
+					</div>
+					<div class="input">
+						<input
+							required="required"
+							id="E-mail-input"
+							name="email"
+						/>
+						<label for="E-mail-input">E-mail</label>
+					</div>
+					<p>
+						Нажимая на кнопку «Отправить», вы ознакомлены и подтверждаете согласие с
+						<span>политикой обработки персональных данных</span>
+					</p>
+					<button
+						type="submit"
+						id="form-submit"
+					>
+						<p class="animated-p">отправить</p>
+					</button>
+				</form>
+			</div>
+			<svg
+				id="dialog-close"
+				width="28"
+				height="28"
+				viewBox="0 0 28 28"
+				fill="none"
+				xmlns="http://www.w3.org/2000/svg"
+			>
+				<path
+					d="M27 1L1.00042 26.9996"
+					stroke="black"
+				/>
+				<path
+					d="M1 1L26.9996 26.9996"
+					stroke="black"
+				/>
+			</svg>
+		</dialog>
+		<div
+			id="video-container"
+			class="hidden"
+		>
+			<video
+				controls
+				type="video/mp4"
+				id="preview-video"
+				src="images/preview.mp4"
+			></video>
+			<svg
+				id="video-close"
+				width="28"
+				height="28"
+				viewBox="0 0 28 28"
+				fill="white"
+				xmlns="http://www.w3.org/2000/svg"
+			>
+				<path
+					d="M27 1L1.00042 26.9996"
+					stroke="white"
+				/>
+				<path
+					d="M1 1L26.9996 26.9996"
+					stroke="white"
+				/>
+			</svg>
+		</div>
+		<script src="index.js"></script>
+	</body>
+</html>
